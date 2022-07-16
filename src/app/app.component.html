@@ -1,4 +1,7 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
+<input
+  #newName
+  (input)="onInput(newName.value)"
+>
+<button (click)="addMember()">click</button>
