@@ -7,17 +7,24 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent {
   name = 'Angular ' + VERSION.major;
-  member: string[] = [];
+  members: string[] = [];
   newMember = '';
-  out() {
-    console.log('here');
-  }
+
   addMember() {
-    this.member.push(this.newMember);
-    console.log(this.member);
+    if (!!this.newMember) {
+      this.members.push(this.newMember);
+      this.newMember = '';
+      console.log(this.members);
+    } else {
+      console.log('cannot add empty name');
+    }
   }
-  onInput(member:string){
+  onInput(member: string) {
     this.newMember = member;
+    console.log(this.newMember);
+  }
+  delete() {
+    this.members = [];
+    console.log(this.members);
   }
 }
-//this test

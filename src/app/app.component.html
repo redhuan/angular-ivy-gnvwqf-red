@@ -1,7 +1,36 @@
-<hello name="{{ name }}"></hello>
-<p>Start editing to see some magic happen :)</p>
-<input
-  #newName
-  (input)="onInput(newName.value)"
->
-<button (click)="addMember()">click</button>
+<div class="position-relative">
+  <h1>Group Maker</h1>
+</div>
+
+<form class="row g-3">
+  <div class="col-sm-7">
+    <input class="input-group-text" #newName (input)="onInput(newName.value)" 
+    [value]= "newMember"
+    />
+  </div>
+
+  <div class="col-sm">
+    <button type="button" class="btn btn-primary" (click)="addMember()">
+      add
+    </button>
+  </div>
+  <div class="col-sm">
+    <button type="button" class="btn btn-danger" (click)="delete()">
+      delete
+    </button>
+  </div>
+  <div></div>
+</form>
+
+<span class="border">
+
+
+
+  <div *ngIf= "members.length > 0">
+    test
+    <ul class="list1">
+      <li *ngFor="let Member of members">{{ Member }}</li>
+    </ul>
+  </div>
+
+</span>
